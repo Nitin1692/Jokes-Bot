@@ -8,7 +8,6 @@ import pyjokes as py
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
 bot =telebot.TeleBot(API_KEY)
-print(API_KEY)
 
 
 @bot.message_handler(commands=['Joke'])

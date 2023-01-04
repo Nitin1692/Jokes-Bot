@@ -1,20 +1,16 @@
 import os
 from dotenv import load_dotenv
 import telebot
-
 import pyjokes as py
-
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
 bot =telebot.TeleBot(API_KEY)
 
-
 @bot.message_handler(commands=['Joke'])
 def print_joke(message):
-   a = py.get_joke()
-   bot.send_message(message.chat.id, a)
-
+    a = py.get_joke()
+    bot.send_message(message.chat.id, a)
 
 @bot.message_handler(commands=['Start'])
 def start_command(message):
